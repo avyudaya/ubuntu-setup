@@ -28,6 +28,13 @@ wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb -O viber.deb
 # installing google chrome, discord, viber
 sudo apt install ./googlechrome.deb ./discord.deb ./viber.deb -y
 rm -rf *.deb
+
+# installing miniconda
+rm -rf ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh -O miniconda.sh
+chmod +x miniconda.sh
+./miniconda.sh
+rm -rf *.sh
 cd
 
 # installing nvm and yarn
@@ -48,6 +55,8 @@ echo 'export PATH="$HOME/.pyenv/bin:$PATH"'>>.bashrc
 echo 'eval "$(pyenv init --path)"'>>.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"'>>.bashrc
 source .bashrc
+pyenv install 3.11.2
+pyenv global 3.11.2
 
 #changing shell
 chsh -s /usr/bin/fish
@@ -56,14 +65,8 @@ chsh -s /usr/bin/fish
 rm -rf .local/share/omf/
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf isntall nvm z
-nvm install --lts
-nvm use --lts
 
 # currently need to type this manually as shell changes !FIXME!
 # fish shell config
 fish_add_path $PYENV_ROOT/bin
 set -Ux PYENV_ROOT $HOME/.pyenv
-pyenv install 3.11.2
-pyenv global 3.11.2
-
-
