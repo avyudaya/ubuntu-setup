@@ -25,6 +25,9 @@ wget https://dl.discordapp.net/apps/linux/0.0.25/discord-0.0.25.deb -O discord.d
 # downloading viber
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb -O viber.deb
 
+# downloading ganache truffle
+wget https://github.com/trufflesuite/ganache-ui/releases/download/v2.7.0/ganache-2.7.0-linux-x86_64.AppImage
+
 # installing google chrome, discord, viber
 sudo apt install ./googlechrome.deb ./discord.deb ./viber.deb -y
 rm -rf *.deb
